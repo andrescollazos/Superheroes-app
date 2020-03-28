@@ -6,6 +6,11 @@ body {
     margin-top: 20px;
 }
 
+.img-logo {
+    display: flex;
+    justify-content: center;
+}
+
 /*  ANIMACIONES */
 
 .animated {
