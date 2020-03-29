@@ -2,23 +2,16 @@
 <a [routerLink]="['/heroes']" class="btn btn-danger">Regresar</a>
 <hr>
 
-<div class="card-columns">
-
-    <div *ngFor="let heroe of heroeArr; let id = index;" class="card animated fadeIn fast">
-        <img [src]="heroe.img" class="card-img-top img-fluid" [alt]="heroe.img">
-        <div class="card-body">
-            <h5 class="card-title">{{ heroe.nombre }}</h5>
-            <h6 class="card-subtitle">Casa {{ heroe.casa }}</h6>
-            <hr>
-            <p class="card-text">{{ heroe.bio }}</p>
-            <p class="card-text"><small class="text-muted">Aparición {{ heroe.aparicion }}</small></p>
-            <!-- Hacerlo mediante JavaScript -->
-            <button (click)="verHeroe(heroe)" type="button" class="btn btn-outline-primary btn-block">
-                Ver más
-            </button>
-            <!-- Hacerlo mediante routerLink -->
-            <!-- <a [routerLink]="['/heroe', id]" class="btn btn-outline-primary btn-block">Ver más</a> -->
+<div class="row animated fadeIn" *ngIf="heroeArr.length === 0">
+    <div class="col-md-12">
+        <div class="alert alert-danger" role="alert">
+            ¡No se encontraron resultados para: {{termino}} !
         </div>
     </div>
+</div>
+
+<div class="card-columns">
+
+    <app-heroe-tarjeta [heroe]="heroe" *ngFor="let heroe of heroeArr; let id = index;"></app-heroe-tarjeta>
 
 </div>

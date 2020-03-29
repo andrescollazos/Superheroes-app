@@ -17,16 +17,16 @@ export class BusquedaComponent implements OnInit {
                 this.activatedRoute.params.subscribe(params => {
                   this.termino = params['termino'];
                   this.heroeArr = this._heroesServices.buscarHeroes(this.termino);
-                  console.log(this.heroeArr);
+                  //console.log(this.heroeArr);
                 })
   }
 
   ngOnInit(): void {
   }
 
-  verHeroe(heroe: Heroe) {
+  /* verHeroe(heroe: Heroe) {
     let id = this._heroesServices.getIndexHeroe(heroe);
     this._routerService.navigate(['/heroe', id])
-  }
+  } */
 
 }
